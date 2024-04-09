@@ -9,8 +9,9 @@ import { fetchItems } from "../reducks/items/operations";
 import { getItems } from "../reducks/items/selectors";
 import { getCarts, getSubtotal } from "../reducks/carts/selectors";
 import { fetchFromLocalStorage } from "../reducks/carts/operations";
-import queryString from "query-string"
-import brush from '../assets/img/brush.svg';
+import queryString from "query-string";
+import brush from "../assets/img/brush.svg";
+
 
 const Home = () => {
   const parsed = queryString.parse(window.location.search);
@@ -35,7 +36,7 @@ const Home = () => {
       selected_count = carts[item.id].selected_count;
     }
 
-    if (showCartList && carts[item.id] == undefined) {
+    if (showCartList && carts[item.id] === undefined) {
       // if the page is cart page and item is not slected, show nothing.
       return;
     }
